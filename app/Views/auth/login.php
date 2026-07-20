@@ -30,7 +30,7 @@
                             <?= csrf_field() ?>
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Numéro de téléphone</label>
-                                <input type="text" class="form-control" id="phone" name="phone" required>
+                                <input type="text" class="form-control" id="phone" name="phone" required minlength="10" maxlength="10" pattern="[0-9]{10}">
                             </div>
                             <button type="submit" class="btn btn-primary w-100">Se connecter</button>
                         </form>

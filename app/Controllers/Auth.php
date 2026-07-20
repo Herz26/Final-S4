@@ -23,7 +23,7 @@ class Auth extends BaseController
         $validation = \Config\Services::validation();
 
         $rules = [
-            'phone' => 'required|min_length[8]|max_length[15]',
+            'phone' => 'required|exact_length[10]|numeric',
         ];
 
         if (! $this->validate($rules)) {
