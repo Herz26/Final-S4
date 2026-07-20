@@ -46,4 +46,4 @@
 - Tag Git `v1`
 - Fichier `base.sql` a la racine
 - Fichier `Taches.md` a la racine
-- Application fonctionnelle sur `localhost:8993`
+- Application fonctionnelle sur `localhost:8080/auth`
