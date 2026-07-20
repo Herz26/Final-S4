@@ -339,7 +339,8 @@ class Client extends BaseController
             $transferModel = new TransferModel();
 
             foreach ($recipientData as $data) {
-                $accountModel->update($fromAccount['id'], ['solde' => $fromAccount['solde'] - $data['total']]);
+                $fromAccount['solde'] -= $data['total'];
+                $accountModel->update($fromAccount['id'], ['solde' => $fromAccount['solde']]);
                 $accountModel->update($data['toAccount']['id'], ['solde' => $data['toAccount']['solde'] + $data['receivedAmount']]);
 
                 $transactionId = $transactionModel->insert([
