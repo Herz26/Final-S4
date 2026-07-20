@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Types d opérations - Mobile Money</title>
+    <title>Types d'opérations - Mobile Money</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
 </head>
@@ -24,7 +24,7 @@
                 <div class="list-group">
                     <a href="/operator" class="list-group-item list-group-item-action">Dashboard</a>
                     <a href="/operator/prefixes" class="list-group-item list-group-item-action">Configuration des préfixes</a>
-                    <a href="/operator/operation-types" class="list-group-item list-group-item-action active">Types d opérations</a>
+                    <a href="/operator/operation-types" class="list-group-item list-group-item-action active">Types d'opérations</a>
                     <a href="/operator/fees" class="list-group-item list-group-item-action">Barèmes de frais</a>
                     <a href="/operator/gains" class="list-group-item list-group-item-action">Gains par opération</a>
                     <a href="/operator/comptes" class="list-group-item list-group-item-action">Situation des comptes</a>
@@ -36,7 +36,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-header">
-                                <h4>Ajouter un type d opération</h4>
+                                <h4>Ajouter un type d'opération</h4>
                             </div>
                             <div class="card-body">
                                 <?php if (session()->get('success')): ?>

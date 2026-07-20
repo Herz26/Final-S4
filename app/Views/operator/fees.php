@@ -24,7 +24,7 @@
                 <div class="list-group">
                     <a href="/operator" class="list-group-item list-group-item-action">Dashboard</a>
                     <a href="/operator/prefixes" class="list-group-item list-group-item-action">Configuration des préfixes</a>
-                    <a href="/operator/operation-types" class="list-group-item list-group-item-action">Types d opérations</a>
+                    <a href="/operator/operation-types" class="list-group-item list-group-item-action">Types d'opérations</a>
                     <a href="/operator/fees" class="list-group-item list-group-item-action active">Barèmes de frais</a>
                     <a href="/operator/gains" class="list-group-item list-group-item-action">Gains par opération</a>
                     <a href="/operator/comptes" class="list-group-item list-group-item-action">Situation des comptes</a>
@@ -53,7 +53,7 @@
                                         </select>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="operation_type_id" class="form-label">Type d opération</label>
+                                        <label for="operation_type_id" class="form-label">Type d'opération</label>
                                         <select class="form-select" id="operation_type_id" name="operation_type_id" required>
                                             <?php foreach ($types as $type): ?>
                                                 <option value="<?= $type['id'] ?>"><?= $type['name'] ?></option>

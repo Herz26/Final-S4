@@ -26,35 +26,66 @@
                     <a href="/operator/prefixes" class="list-group-item list-group-item-action">Configuration des préfixes</a>
                     <a href="/operator/operation-types" class="list-group-item list-group-item-action">Types d opérations</a>
                     <a href="/operator/fees" class="list-group-item list-group-item-action">Barèmes de frais</a>
+                    <a href="/operator/commissions" class="list-group-item list-group-item-action">Commissions inter-opérateurs</a>
                     <a href="/operator/gains" class="list-group-item list-group-item-action active">Gains par opération</a>
+                    <a href="/operator/settlements" class="list-group-item list-group-item-action">Montants à envoyer</a>
                     <a href="/operator/comptes" class="list-group-item list-group-item-action">Situation des comptes</a>
                     <a href="/operator/transactions" class="list-group-item list-group-item-action">Toutes les transactions</a>
                 </div>
             </div>
             <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Situation des gains par opération</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h4>Gains propres (opérateur)</h4>
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Opération</th>
+                                            <th>Total gains (Ar)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($own_gains as $gain): ?>
+                                            <tr>
+                                                <td><?= ucfirst($gain['operation_name']) ?></td>
+                                                <td><?= number_format($gain['total_fees'], 0, ',', ' ') ?></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Opérateur</th>
-                                    <th>Opération</th>
-                                    <th>Total gains (Ar)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($gains as $gain): ?>
-                                    <tr>
-                                        <td><?= $gain['operator_name'] ?></td>
-                                        <td><?= ucfirst($gain['operation_name']) ?></td>
-                                        <td><?= number_format($gain['total_fees'], 0, ',', ' ') ?></td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h4>Gains commissions inter-opérateurs</h4>
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Opérateur</th>
+                                            <th>Opération</th>
+                                            <th>Total gains (Ar)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($inter_operator_gains as $gain): ?>
+                                            <tr>
+                                                <td><?= $gain['operator_name'] ?></td>
+                                                <td><?= ucfirst($gain['operation_name']) ?></td>
+                                                <td><?= number_format($gain['total_fees'], 0, ',', ' ') ?></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

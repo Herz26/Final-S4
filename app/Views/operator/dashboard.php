@@ -22,10 +22,13 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
+                    <a href="/operator" class="list-group-item list-group-item-action">Dashboard</a>
                     <a href="/operator/prefixes" class="list-group-item list-group-item-action">Configuration des préfixes</a>
-                    <a href="/operator/operation-types" class="list-group-item list-group-item-action">Types d opérations</a>
+                    <a href="/operator/operation-types" class="list-group-item list-group-item-action">Types d'opérations</a>
                     <a href="/operator/fees" class="list-group-item list-group-item-action">Barèmes de frais</a>
+                    <a href="/operator/commissions" class="list-group-item list-group-item-action">Commissions inter-opérateurs</a>
                     <a href="/operator/gains" class="list-group-item list-group-item-action">Gains par opération</a>
+                    <a href="/operator/settlements" class="list-group-item list-group-item-action">Montants à envoyer</a>
                     <a href="/operator/comptes" class="list-group-item list-group-item-action">Situation des comptes</a>
                     <a href="/operator/transactions" class="list-group-item list-group-item-action">Toutes les transactions</a>
                 </div>
@@ -36,7 +39,7 @@
                         <h4>Bienvenue sur le tableau de bord opérateur</h4>
                     </div>
                     <div class="card-body">
-                        <p>Utilisez le menu à gauche pour configurer l opérateur et consulter les statistiques.</p>
+                        <p>Utilisez le menu à gauche pour configurer l'opérateur et consulter les statistiques.</p>
                     </div>
                 </div>
             </div>

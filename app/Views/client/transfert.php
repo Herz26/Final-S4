@@ -21,7 +21,7 @@
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="card">
+                <div class="card login-card">
                     <div class="card-header">
                         <h4>Effectuer un transfert</h4>
                     </div>
@@ -42,9 +42,18 @@
                                 <label for="amount" class="form-label">Montant (Ar)</label>
                                 <input type="number" class="form-control" id="amount" name="amount" required min="1">
                             </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="include_withdrawal_fee" name="include_withdrawal_fee" value="1">
+                                <label class="form-check-label" for="include_withdrawal_fee">
+                                    Inclure les frais de retrait (le destinataire recevra le montant complet)
+                                </label>
+                            </div>
                             <button type="submit" class="btn btn-info">Transférer</button>
                             <a href="/client/dashboard" class="btn btn-secondary">Annuler</a>
                         </form>
+                        <div class="mt-3">
+                            <a href="/client/transfert-multiple" class="btn btn-outline-primary">Transfert multiple</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -190,3 +190,327 @@ in APPPATH\Controllers\Home.php on line 9.
  5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
  7 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Oracle\\MobileMOney\\public\\index.php')
+CRITICAL - 2026-07-20 11:39:40 --> TypeError: CodeIgniter\Database\BaseBuilder::groupBy(): Argument #2 ($escape) must be of type ?bool, string given, called in C:\Users\Oracle\MobileMOney\system\Model.php on line 756
+[Method: GET, Route: operator/gains]
+in SYSTEMPATH\Database\BaseBuilder.php on line 1415.
+ 1 SYSTEMPATH\Model.php(756): CodeIgniter\Database\BaseBuilder->groupBy('accounts.operator_id', 'transactions.operation_type_id')
+ 2 APPPATH\Controllers\Operator.php(203): CodeIgniter\Model->__call('groupBy', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Operator->gains()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Operator))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Oracle\\MobileMOney\\public\\index.php')
+ERROR - 2026-07-20 11:42:01 --> Unable to prepare statement: 1, no such column: operation_types.name
+in SYSTEMPATH\Database\SQLite3\Connection.php on line 164.
+ 1 SYSTEMPATH\Database\SQLite3\Connection.php(164): SQLite3->query('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != :accounts.operator_id:
+AND `transactions`.`fee` > :transactions.fee:
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`', [...], false)
+ 5 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Operator.php(204): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Operator->gains()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Operator))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Oracle\\MobileMOney\\public\\index.php')
+CRITICAL - 2026-07-20 11:42:01 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: operator/gains]
+in SYSTEMPATH\Model.php on line 256.
+ 1 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Operator.php(204): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Operator->gains()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Operator))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Oracle\\MobileMOney\\public\\index.php')
+ERROR - 2026-07-20 11:42:50 --> Unable to prepare statement: 1, no such column: operation_types.name
+in SYSTEMPATH\Database\SQLite3\Connection.php on line 164.
+ 1 SYSTEMPATH\Database\SQLite3\Connection.php(164): SQLite3->query('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != :accounts.operator_id:
+AND `transactions`.`fee` > :transactions.fee:
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`', [...], false)
+ 5 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Operator.php(204): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Operator->gains()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Operator))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Oracle\\MobileMOney\\public\\index.php')
+CRITICAL - 2026-07-20 11:42:50 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: operator/gains]
+in SYSTEMPATH\Model.php on line 256.
+ 1 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Operator.php(204): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Operator->gains()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Operator))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Oracle\\MobileMOney\\public\\index.php')
+ERROR - 2026-07-20 11:51:51 --> Unable to prepare statement: 1, no such column: operation_types.name
+in SYSTEMPATH\Database\SQLite3\Connection.php on line 164.
+ 1 SYSTEMPATH\Database\SQLite3\Connection.php(164): SQLite3->query('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != :accounts.operator_id:
+AND `transactions`.`fee` > :transactions.fee:
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`', [...], false)
+ 5 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Operator.php(204): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Operator->gains()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Operator))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Oracle\\MobileMOney\\public\\index.php')
+CRITICAL - 2026-07-20 11:51:51 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: operator/gains]
+in SYSTEMPATH\Model.php on line 256.
+ 1 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Operator.php(204): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Operator->gains()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Operator))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Oracle\\MobileMOney\\public\\index.php')
+ERROR - 2026-07-20 11:54:48 --> Unable to prepare statement: 1, no such column: operation_types.name
+in SYSTEMPATH\Database\SQLite3\Connection.php on line 164.
+ 1 SYSTEMPATH\Database\SQLite3\Connection.php(164): SQLite3->query('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE accounts.operator_id != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE accounts.operator_id != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE accounts.operator_id != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE accounts.operator_id != :accounts.operator_id:
+AND `transactions`.`fee` > :transactions.fee:
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`', [...], false)
+ 5 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Operator.php(204): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Operator->gains()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Operator))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Oracle\\MobileMOney\\public\\index.php')
+CRITICAL - 2026-07-20 11:54:48 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: operator/gains]
+in SYSTEMPATH\Model.php on line 256.
+ 1 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Operator.php(204): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Operator->gains()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Operator))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Oracle\\MobileMOney\\public\\index.php')
+ERROR - 2026-07-20 11:58:35 --> Unable to prepare statement: 1, no such column: operation_types.name
+in SYSTEMPATH\Database\SQLite3\Connection.php on line 164.
+ 1 SYSTEMPATH\Database\SQLite3\Connection.php(164): SQLite3->query('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != :accounts.operator_id:
+AND `transactions`.`fee` > :transactions.fee:
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`', [...], false)
+ 5 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Operator.php(204): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Operator->gains()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Operator))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Oracle\\MobileMOney\\public\\index.php')
+CRITICAL - 2026-07-20 11:58:35 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: operator/gains]
+in SYSTEMPATH\Model.php on line 256.
+ 1 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Operator.php(204): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Operator->gains()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Operator))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Oracle\\MobileMOney\\public\\index.php')
+ERROR - 2026-07-20 11:59:38 --> Unable to prepare statement: 1, no such column: operation_types.name
+in SYSTEMPATH\Database\SQLite3\Connection.php on line 164.
+ 1 SYSTEMPATH\Database\SQLite3\Connection.php(164): SQLite3->query('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != 1
+AND `transactions`.`fee` > 0
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `to_op`.`name` as `operator_name`, `operation_types`.`name` as `operation_name`, SUM(transactions.fee) as total_fees
+FROM `transactions`
+JOIN `accounts` ON `accounts`.`id` = `transactions`.`account_id`
+JOIN `operators` as `to_op` ON `to_op`.`id` = `accounts`.`operator_id`
+WHERE `accounts`.`operator_id` != :accounts.operator_id:
+AND `transactions`.`fee` > :transactions.fee:
+GROUP BY `accounts`.`operator_id`, `transactions`.`operation_type_id`', [...], false)
+ 5 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Operator.php(205): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Operator->gains()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Operator))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Oracle\\MobileMOney\\public\\index.php')
+CRITICAL - 2026-07-20 11:59:38 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: operator/gains]
+in SYSTEMPATH\Model.php on line 256.
+ 1 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Operator.php(205): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Operator->gains()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Operator))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Oracle\\MobileMOney\\public\\index.php')

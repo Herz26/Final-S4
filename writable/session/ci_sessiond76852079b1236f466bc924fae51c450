@@ -1,0 +1,1 @@
+__ci_last_regenerate|i:1784550477;_ci_previous_url|s:57:"http://localhost:8080/index.php/client/transfert-multiple";client_id|i:3;client_phone|s:10:"0331234567";operator_id|i:1;error|s:58:"Vous ne pouvez pas transférer à vous-même (0331234567).";__ci_vars|a:1:{s:5:"error";s:3:"old";}

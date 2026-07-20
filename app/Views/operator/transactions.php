@@ -24,7 +24,7 @@
                 <div class="list-group">
                     <a href="/operator" class="list-group-item list-group-item-action">Dashboard</a>
                     <a href="/operator/prefixes" class="list-group-item list-group-item-action">Configuration des préfixes</a>
-                    <a href="/operator/operation-types" class="list-group-item list-group-item-action">Types d opérations</a>
+                    <a href="/operator/operation-types" class="list-group-item list-group-item-action">Types d'opérations</a>
                     <a href="/operator/fees" class="list-group-item list-group-item-action">Barèmes de frais</a>
                     <a href="/operator/gains" class="list-group-item list-group-item-action">Gains par opération</a>
                     <a href="/operator/comptes" class="list-group-item list-group-item-action">Situation des comptes</a>

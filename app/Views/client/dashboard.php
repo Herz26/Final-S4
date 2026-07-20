@@ -39,40 +39,41 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row g-3">
             <div class="col-md-3">
-                <div class="card mb-3">
+                <div class="card h-100">
                     <div class="card-body text-center">
                         <h5>Dépôt</h5>
                         <p>Effectuer un dépôt</p>
-                        <a href="/client/depot" class="btn btn-success">Déposer</a>
+                        <a href="/client/depot" class="btn btn-success w-100">Déposer</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card mb-3">
+                <div class="card h-100">
                     <div class="card-body text-center">
                         <h5>Retrait</h5>
                         <p>Effectuer un retrait</p>
-                        <a href="/client/retrait" class="btn btn-warning">Retirer</a>
+                        <a href="/client/retrait" class="btn btn-warning w-100">Retirer</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card mb-3">
+                <div class="card h-100">
                     <div class="card-body text-center">
                         <h5>Transfert</h5>
                         <p>Transférer de l'argent</p>
-                        <a href="/client/transfert" class="btn btn-info">Transférer</a>
+                        <a href="/client/transfert" class="btn btn-info w-100">Transférer</a>
+                        <a href="/client/transfert-multiple" class="btn btn-outline-info mt-2 w-100">Transfert multiple</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card mb-3">
+                <div class="card h-100">
                     <div class="card-body text-center">
                         <h5>Historique</h5>
                         <p>Voir l'historique</p>
-                        <a href="/client/historique" class="btn btn-secondary">Historique</a>
+                        <a href="/client/historique" class="btn btn-secondary w-100">Historique</a>
                     </div>
                 </div>
             </div>

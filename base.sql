@@ -10,6 +10,17 @@ CREATE TABLE IF NOT EXISTS operators (
     created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
+-- Table des commissions inter-opérateurs pour les transferts
+CREATE TABLE IF NOT EXISTS inter_operator_commissions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    from_operator_id INTEGER NOT NULL,
+    to_operator_id INTEGER NOT NULL,
+    commission_percentage REAL NOT NULL,
+    created_at TEXT NOT NULL DEFAULT (datetime('now')),
+    FOREIGN KEY (from_operator_id) REFERENCES operators(id),
+    FOREIGN KEY (to_operator_id) REFERENCES operators(id)
+);
+
 -- Table des clients
 CREATE TABLE IF NOT EXISTS clients (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -97,6 +108,28 @@ INSERT OR IGNORE INTO operators (id, name, prefix) VALUES (2, 'Orange', '032');
 INSERT OR IGNORE INTO operators (id, name, prefix) VALUES (3, 'Orange', '037');
 INSERT OR IGNORE INTO operators (id, name, prefix) VALUES (4, 'Yas', '034');
 INSERT OR IGNORE INTO operators (id, name, prefix) VALUES (5, 'Yas', '038');
+
+-- Commissions inter-opérateurs (pourcentage prélevé sur les transferts vers un autre opérateur)
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (1, 2, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (1, 3, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (1, 4, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (1, 5, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (2, 1, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (2, 3, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (2, 4, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (2, 5, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (3, 1, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (3, 2, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (3, 4, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (3, 5, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (4, 1, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (4, 2, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (4, 3, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (4, 5, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (5, 1, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (5, 2, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (5, 3, 1.5);
+INSERT OR IGNORE INTO inter_operator_commissions (from_operator_id, to_operator_id, commission_percentage) VALUES (5, 4, 1.5);
 
 -- Insertion des types d'opérations
 INSERT OR IGNORE INTO operation_types (id, name, description) VALUES (1, 'dépôt', 'Dépôt d argent sur le compte');

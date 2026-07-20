@@ -24,7 +24,7 @@
                 <div class="list-group">
                     <a href="/operator" class="list-group-item list-group-item-action">Dashboard</a>
                     <a href="/operator/prefixes" class="list-group-item list-group-item-action active">Configuration des préfixes</a>
-                    <a href="/operator/operation-types" class="list-group-item list-group-item-action">Types d opérations</a>
+                    <a href="/operator/operation-types" class="list-group-item list-group-item-action">Types d'opérations</a>
                     <a href="/operator/fees" class="list-group-item list-group-item-action">Barèmes de frais</a>
                     <a href="/operator/gains" class="list-group-item list-group-item-action">Gains par opération</a>
                     <a href="/operator/comptes" class="list-group-item list-group-item-action">Situation des comptes</a>
@@ -45,7 +45,7 @@
                                 <form action="/operator/prefixes" method="post">
                                     <?= csrf_field() ?>
                                     <div class="mb-3">
-                                        <label for="name" class="form-label">Nom de l opérateur</label>
+                                        <label for="name" class="form-label">Nom de l'opérateur</label>
                                         <input type="text" class="form-control" id="name" name="name" required>
                                     </div>
                                     <div class="mb-3">

@@ -11,7 +11,7 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <div class="card">
+                <div class="card login-card">
                     <div class="card-header">
                         <h4 class="text-center">Connexion Mobile Money</h4>
                     </div>
@@ -31,6 +31,11 @@
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Numéro de téléphone</label>
                                 <input type="text" class="form-control" id="phone" name="phone" required minlength="10" maxlength="10" pattern="[0-9]{10}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="pin" class="form-label">PIN opérateur (optionnel)</label>
+                                <input type="password" class="form-control" id="pin" name="pin" maxlength="10">
+                                <div class="form-text">Laissez vide pour une connexion client. Entrez 0000 pour l opérateur.</div>
                             </div>
                             <button type="submit" class="btn btn-primary w-100">Se connecter</button>
                         </form>
