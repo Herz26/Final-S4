@@ -1,7 +1,5 @@
 -- Base de données Mobile Money (SQLite)
 
--- Version 1
-
 -- Table des opérateurs (préfixes téléphoniques)
 CREATE TABLE IF NOT EXISTS operators (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
