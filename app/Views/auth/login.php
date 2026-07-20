@@ -35,7 +35,7 @@
                             <div class="mb-3">
                                 <label for="pin" class="form-label">PIN opérateur (optionnel)</label>
                                 <input type="password" class="form-control" id="pin" name="pin" maxlength="10">
-                                <div class="form-text">Laissez vide pour une connexion client. Entrez 0000 pour l opérateur.</div>
+                                <div class="form-text">Laissez vide pour une connexion client. Entrez 0000 pour l'opérateur.</div>
                             </div>
                             <button type="submit" class="btn btn-primary w-100">Se connecter</button>
                         </form>

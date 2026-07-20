@@ -37,6 +37,4 @@ $routes->group('operator', ['filter' => 'operator'], static function ($routes) {
     $routes->get('transactions', 'Operator::transactions');
 });
 
-$routes->get('operator/login', 'Operator::login');
-$routes->post('operator/login', 'Operator::login');
 $routes->get('operator/logout', 'Operator::logout');

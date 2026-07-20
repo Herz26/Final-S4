@@ -302,26 +302,7 @@ class Operator extends BaseController
 
     public function login()
     {
-        if ($this->request->getMethod() === 'POST') {
-            $pin = $this->request->getPost('pin');
-
-            if ($pin === '0000') {
-                $operatorModel = new OperatorModel();
-                $operator = $operatorModel->first();
-
-                if ($operator) {
-                    session()->set([
-                        'operator_id' => $operator['id'],
-                        'operator_name' => $operator['name'],
-                    ]);
-                    return redirect()->to('/operator');
-                }
-            }
-
-            return redirect()->back()->with('error', 'PIN incorrect.');
-        }
-
-        return view('operator/login');
+        return redirect()->to('/auth');
     }
 
     public function logout()
