@@ -144,9 +144,13 @@ class Client extends BaseController
 
             $transferFee = $fee['fee'];
             $interOperatorCommission = 0;
+            $sameOperatorDiscount = 0;
 
             $toOperatorId = $toClient['operator_id'];
-            if ($toOperatorId != $operatorId) {
+            if ($toOperatorId == $operatorId) {
+                $sameOperatorDiscount = $transferFee * 0.1;
+                $transferFee -= $sameOperatorDiscount;
+            } else {
                 $commissionModel = new InterOperatorCommissionModel();
                 $commission = $commissionModel->where('from_operator_id', $operatorId)
                     ->where('to_operator_id', $toOperatorId)
@@ -202,12 +206,8 @@ class Client extends BaseController
             ]);
 
             $msg = 'Transfert effectué avec succès vers ' . $toPhone . '. Frais: ' . ($transferFee + $withdrawalFee) . ' Ar';
-            if ($includeWithdrawalFee) {
-                $msg .= ' (dont frais retrait: ' . $withdrawalFee . ' Ar';
-                if ($interOperatorCommission > 0) {
-                    $msg .= ', dont commission inter-opérateur: ' . number_format($interOperatorCommission, 0, ',', ' ') . ' Ar';
-                }
-                $msg .= ')';
+            if ($sameOperatorDiscount > 0) {
+                $msg .= ' (remise même opérateur 10%: -' . number_format($sameOperatorDiscount, 0, ',', ' ') . ' Ar)';
             } elseif ($interOperatorCommission > 0) {
                 $msg .= ' (dont commission inter-opérateur: ' . number_format($interOperatorCommission, 0, ',', ' ') . ' Ar)';
             }
@@ -290,8 +290,12 @@ class Client extends BaseController
 
                 $transferFee = $fee['fee'];
                 $interOperatorCommission = 0;
+                $sameOperatorDiscount = 0;
 
-                if ($toOperatorId != $operatorId) {
+                if ($toOperatorId == $operatorId) {
+                    $sameOperatorDiscount = $transferFee * 0.1;
+                    $transferFee -= $sameOperatorDiscount;
+                } else {
                     $commissionModel = new InterOperatorCommissionModel();
                     $commission = $commissionModel->where('from_operator_id', $operatorId)
                         ->where('to_operator_id', $toOperatorId)

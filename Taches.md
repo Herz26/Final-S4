@@ -63,7 +63,7 @@
 - Mise a jour du controller `Client.php` :
   - Option "inclure frais de retrait" dans le transfert simple
   - Methode `transfertMultiple()` pour l'envoi multiple vers plusieurs numeros
-- Tests fonctionnels cote operateur et client
+  
 
 ### Taches de Kamel
 - Views cote operateur v2 :
@@ -89,9 +89,14 @@
 ### Cote client
 - Option "inclure frais de retrait" lors de l'envoi de transfert
 - Envoi multiple vers plusieurs numeros avec division du montant
+- Remise de 10% sur les frais de transfert pour les transferts entre memes operateurs
 
 ## Livrables v2
 - Tag Git `v2`
 - Fichier `base.sql` mis a jour a la racine
 - Fichier `Taches.md` mis a jour a la racine
 - Application fonctionnelle sur `localhost:8080/auth`
+
+## Alea
+- Remise de 10% sur les frais de transfert pour les transferts entre memes operateurs
+- Tests fonctionnels cote operateur et client
